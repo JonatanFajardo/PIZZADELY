@@ -1,0 +1,62 @@
+/* @import url("https://drive.google.com/uc?id=1xJfOWZedihBcBUm0SmEGLE1GuR0XSUm1&"); */
+@import url("https://drive.google.com/uc?id=1FFGct-H9pfYLbZMEEliYXfzgfiBOXalc");
+ 
+/* @import url(../../../global.css); */
+/* @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@900&display=swap'); */
+
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #ed3b43;
+  --secondary: #ffe119;
+  --font-family-title: 'Spartan', sans-serif;
+  --border-radius: 9px;
+  --border-r-buttom:18px;
+  --header-color: #2d2d43;
+  --text-primary: #2d2d43;
+}
+
+body a, button, .btn {
+  cursor: pointer !important;
+  font-family: var(--font-family-title);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /*     color: var(--heading-color); */
+  /*     letter-spacing: -1px; */
+  font-family: 'Spartan';
+}
+p{
+  font-family: 'sans-serif';
+}
+
+h3.title-big {
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 42px;
+  margin-bottom: 20px;
+}
+
+h6.sub-title {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
