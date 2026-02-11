@@ -17,11 +17,27 @@
     <!-- custom css file -->
     <link rel="stylesheet" href="assets/css/global_local.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/cart.css" />
 
     <title>PizzaDely</title>
   </head>
 
   <body>
+    <!-- ========== HEADER CON CARRITO ========== -->
+    <header class="main-header">
+      <div class="container-full">
+        <div class="header-content">
+          <div class="logo">
+            <h2>🍕 PizzaDely</h2>
+          </div>
+          <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <section class="banner">
       <div class="container-full">
         <div class="row mc">
@@ -46,10 +62,13 @@
               <!--      <div class="owl-cards"> -->
               <div class="">
                 <div class="owl-cards-content">
-                  <h4 class="owl-cards-title">Carbonara</h4>
-                  <p class="owl-cards-text">tomato souce, eggs and bacon</p>
-                  <div class="owl-cards-price">250lp</div>
-                  <a href="#" class="btn ordenar">Ordenar</a>
+                  <h4 class="owl-cards-title">Carbonara Especial</h4>
+                  <p class="owl-cards-text">Salsa de tomate, huevos y bacon premium</p>
+                  <div class="owl-cards-price">250lps</div>
+                  <a href="#" class="btn ordenar add-to-cart"
+                     data-name="Carbonara Especial"
+                     data-price="250"
+                     data-image="assets/img/p1.jpg">Agregar al carrito</a>
                 </div>
                 <div class="owl-cards-image">
                   <img src="assets/img/p1.jpg" alt="" />
@@ -61,10 +80,13 @@
               <!--      <div class="owl-cards"> -->
               <div class="">
                 <div class="owl-cards-content">
-                  <h4 class="owl-cards-title">Carbonara</h4>
-                  <p class="owl-cards-text">tomato souce, eggs and bacon</p>
-                  <div class="owl-cards-price">250lp</div>
-                  <a href="#" class="btn ordenar">Ordenar</a>
+                  <h4 class="owl-cards-title">Pepperoni Deluxe</h4>
+                  <p class="owl-cards-text">Extra pepperoni y queso mozzarella</p>
+                  <div class="owl-cards-price">220lps</div>
+                  <a href="#" class="btn ordenar add-to-cart"
+                     data-name="Pepperoni Deluxe"
+                     data-price="220"
+                     data-image="assets/img/p1.jpg">Agregar al carrito</a>
                 </div>
                 <div class="owl-cards-image">
                   <img src="assets/img/p1.jpg" alt="" />
@@ -76,10 +98,13 @@
               <!--      <div class="owl-cards"> -->
               <div class="">
                 <div class="owl-cards-content">
-                  <h4 class="owl-cards-title">Carbonara</h4>
-                  <p class="owl-cards-text">tomato souce, eggs and bacon</p>
-                  <div class="owl-cards-price">250lp</div>
-                  <a href="#" class="btn ordenar">Ordenar</a>
+                  <h4 class="owl-cards-title">Hawaiana Premium</h4>
+                  <p class="owl-cards-text">Jamón premium, piña dulce y queso</p>
+                  <div class="owl-cards-price">230lps</div>
+                  <a href="#" class="btn ordenar add-to-cart"
+                     data-name="Hawaiana Premium"
+                     data-price="230"
+                     data-image="assets/img/p1.jpg">Agregar al carrito</a>
                 </div>
                 <div class="owl-cards-image">
                   <img src="assets/img/p1.jpg" alt="" />
@@ -91,10 +116,13 @@
               <!--      <div class="owl-cards"> -->
               <div class="">
                 <div class="owl-cards-content">
-                  <h4 class="owl-cards-title">Carbonara</h4>
-                  <p class="owl-cards-text">tomato souce, eggs and bacon</p>
-                  <div class="owl-cards-price">250lp</div>
-                  <a href="#" class="btn ordenar">Ordenar</a>
+                  <h4 class="owl-cards-title">Vegetal Fresh</h4>
+                  <p class="owl-cards-text">Vegetales frescos y salsa especial</p>
+                  <div class="owl-cards-price">190lps</div>
+                  <a href="#" class="btn ordenar add-to-cart"
+                     data-name="Vegetal Fresh"
+                     data-price="190"
+                     data-image="assets/img/p1.jpg">Agregar al carrito</a>
                 </div>
                 <div class="owl-cards-image">
                   <img src="assets/img/p1.jpg" alt="" />
@@ -106,10 +134,13 @@
               <!--      <div class="owl-cards"> -->
               <div class="">
                 <div class="owl-cards-content">
-                  <h4 class="owl-cards-title">Carbonara</h4>
-                  <p class="owl-cards-text">tomato souce, eggs and bacon</p>
-                  <div class="owl-cards-price">250lp</div>
-                  <a href="#" class="btn ordenar">Ordenar</a>
+                  <h4 class="owl-cards-title">BBQ Chicken</h4>
+                  <p class="owl-cards-text">Pollo, salsa BBQ y cebolla caramelizada</p>
+                  <div class="owl-cards-price">245lps</div>
+                  <a href="#" class="btn ordenar add-to-cart"
+                     data-name="BBQ Chicken"
+                     data-price="245"
+                     data-image="assets/img/p1.jpg">Agregar al carrito</a>
                 </div>
                 <div class="owl-cards-image">
                   <img src="assets/img/p1.jpg" alt="" />
@@ -127,7 +158,7 @@
         <div class="row">
           <div class="cards">
             <!-- cards-item -->
-            <div class="cards-item">
+            <div class="cards-item" data-product-id="1">
               <div class="card-header">
                 <img
                   src="assets/img/menu/menu_1.jpg"
@@ -141,13 +172,16 @@
                   do eiusmod tempor.
                 </div>
                 <div class="cards-price">Desde: <span>140lps </span></div>
-                <div class="card-btn btn btnOrdenar">
-                  <a hreft="#">ordenar</a>
+                <div class="card-btn btn btnOrdenar add-to-cart"
+                     data-name="Margarita"
+                     data-price="140"
+                     data-image="assets/img/menu/menu_1.jpg">
+                  <a href="#">Agregar al carrito</a>
                 </div>
               </div>
             </div>
             <!-- cards-item -->
-            <div class="cards-item">
+            <div class="cards-item" data-product-id="2">
               <div class="card-header">
                 <img
                   src="assets/img/menu/menu_2.jpg"
@@ -161,13 +195,16 @@
                   do eiusmod tempor.
                 </div>
                 <div class="cards-price">Desde: <span>135lps </span></div>
-                <div class="card-btn btn btnOrdenar">
-                  <a hreft="#">ordenar</a>
+                <div class="card-btn btn btnOrdenar add-to-cart"
+                     data-name="Napolitana"
+                     data-price="135"
+                     data-image="assets/img/menu/menu_2.jpg">
+                  <a href="#">Agregar al carrito</a>
                 </div>
               </div>
             </div>
             <!-- cards-item -->
-            <div class="cards-item">
+            <div class="cards-item" data-product-id="3">
               <div class="card-header">
                 <img
                   src="assets/img/menu/menu_3.jpg"
@@ -181,13 +218,16 @@
                   do eiusmod tempor.
                 </div>
                 <div class="cards-price">Desde: <span>136lps </span></div>
-                <div class="card-btn btn btnOrdenar">
-                  <a hreft="#">ordenar</a>
+                <div class="card-btn btn btnOrdenar add-to-cart"
+                     data-name="Cuatro Quesos"
+                     data-price="136"
+                     data-image="assets/img/menu/menu_3.jpg">
+                  <a href="#">Agregar al carrito</a>
                 </div>
               </div>
             </div>
             <!-- cards-item -->
-            <div class="cards-item">
+            <div class="cards-item" data-product-id="4">
               <div class="card-header">
                 <img
                   src="assets/img/menu/menu_4.jpg"
@@ -201,13 +241,16 @@
                   do eiusmod tempor.
                 </div>
                 <div class="cards-price">Desde: <span>210lps </span></div>
-                <div class="card-btn btn btnOrdenar">
-                  <a hreft="#">ordenar</a>
+                <div class="card-btn btn btnOrdenar add-to-cart"
+                     data-name="Cuatro Estaciones"
+                     data-price="210"
+                     data-image="assets/img/menu/menu_4.jpg">
+                  <a href="#">Agregar al carrito</a>
                 </div>
               </div>
             </div>
             <!-- cards-item -->
-            <div class="cards-item">
+            <div class="cards-item" data-product-id="5">
               <div class="card-header">
                 <img
                   src="assets/img/menu/menu_1.jpg"
@@ -221,13 +264,16 @@
                   do eiusmod tempor.
                 </div>
                 <div class="cards-price">Desde: <span>250lps </span></div>
-                <div class="card-btn btn btnOrdenar">
-                  <a hreft="#">ordenar</a>
+                <div class="card-btn btn btnOrdenar add-to-cart"
+                     data-name="Carbonara"
+                     data-price="250"
+                     data-image="assets/img/menu/menu_1.jpg">
+                  <a href="#">Agregar al carrito</a>
                 </div>
               </div>
             </div>
             <!-- cards-item -->
-            <div class="cards-item">
+            <div class="cards-item" data-product-id="6">
               <div class="card-header">
                 <img
                   src="assets/img/menu/menu_2.jpg"
@@ -241,13 +287,16 @@
                   do eiusmod tempor.
                 </div>
                 <div class="cards-price">Desde: <span>200lps </span></div>
-                <div class="card-btn btn btnOrdenar">
-                  <a hreft="#">ordenar</a>
+                <div class="card-btn btn btnOrdenar add-to-cart"
+                     data-name="Calzone"
+                     data-price="200"
+                     data-image="assets/img/menu/menu_2.jpg">
+                  <a href="#">Agregar al carrito</a>
                 </div>
               </div>
             </div>
             <!-- cards-item -->
-            <div class="cards-item">
+            <div class="cards-item" data-product-id="7">
               <div class="card-header">
                 <img
                   src="assets/img/menu/menu_3.jpg"
@@ -261,8 +310,11 @@
                   do eiusmod tempor.
                 </div>
                 <div class="cards-price">Desde: <span>143lps </span></div>
-                <div class="card-btn btn btnOrdenar">
-                  <a hreft="#">ordenar</a>
+                <div class="card-btn btn btnOrdenar add-to-cart"
+                     data-name="Diavola"
+                     data-price="143"
+                     data-image="assets/img/menu/menu_3.jpg">
+                  <a href="#">Agregar al carrito</a>
                 </div>
               </div>
             </div>
@@ -758,6 +810,197 @@
       </div>
     </div>
 
+    <!-- ========== MODAL DEL CARRITO ========== -->
+    <div id="cartModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2><i class="fas fa-shopping-cart"></i> Tu Carrito</h2>
+          <span class="close-modal" data-modal="cartModal">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div id="cartItems"></div>
+          <div class="cart-empty" style="display: none;">
+            <i class="fas fa-shopping-basket"></i>
+            <p>Tu carrito está vacío</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">0 lps</span>
+          </div>
+          <button class="btn btn-primary" id="checkoutBtn">Ir a Pagar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MODAL DE CHECKOUT ========== -->
+    <div id="checkoutModal" class="modal">
+      <div class="modal-content checkout-modal">
+        <div class="modal-header">
+          <h2><i class="fas fa-credit-card"></i> Finalizar Compra</h2>
+          <span class="close-modal" data-modal="checkoutModal">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="prototype-warning">
+            <i class="fas fa-info-circle"></i>
+            <p><strong>PROTOTIPO DE DEMOSTRACIÓN:</strong> Los datos están prellenados y el pago es simulado con fines demostrativos.</p>
+          </div>
+
+          <form id="checkoutForm">
+            <div class="form-section">
+              <h3><i class="fas fa-user"></i> Información Personal</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fullName">Nombre Completo</label>
+                  <input type="text" id="fullName" value="Juan Carlos Pérez" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Teléfono</label>
+                  <input type="tel" id="phone" value="9553-4423" readonly>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" value="demo@pizzadely.com" readonly>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3><i class="fas fa-map-marker-alt"></i> Dirección de Entrega</h3>
+              <div class="form-group">
+                <label for="address">Dirección</label>
+                <input type="text" id="address" value="Col. Kennedy, Calle Principal, Casa #123" readonly>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="city">Ciudad</label>
+                  <input type="text" id="city" value="Tegucigalpa" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="zone">Zona</label>
+                  <input type="text" id="zone" value="Centro" readonly>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3><i class="fas fa-credit-card"></i> Método de Pago</h3>
+              <div class="payment-methods">
+                <div class="payment-option selected">
+                  <input type="radio" name="payment" id="card" value="card" checked>
+                  <label for="card">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Tarjeta de Crédito/Débito</span>
+                  </label>
+                </div>
+                <div class="payment-option">
+                  <input type="radio" name="payment" id="cash" value="cash">
+                  <label for="cash">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Efectivo</span>
+                  </label>
+                </div>
+              </div>
+
+              <div id="cardDetails" class="card-details">
+                <div class="form-group">
+                  <label for="cardNumber">Número de Tarjeta</label>
+                  <input type="text" id="cardNumber" value="4532 **** **** 1234" readonly>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="expiry">Vencimiento</label>
+                    <input type="text" id="expiry" value="12/25" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" value="***" readonly>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-summary">
+              <h3>Resumen del Pedido</h3>
+              <div id="checkoutItems"></div>
+              <div class="summary-totals">
+                <div class="summary-row">
+                  <span>Subtotal:</span>
+                  <span id="checkoutSubtotal">0 lps</span>
+                </div>
+                <div class="summary-row">
+                  <span>Envío:</span>
+                  <span class="free-shipping">GRATIS</span>
+                </div>
+                <div class="summary-row total-row">
+                  <span>Total:</span>
+                  <span id="checkoutTotal">0 lps</span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" id="backToCart">Volver al Carrito</button>
+          <button class="btn btn-success" id="confirmPayment">
+            <i class="fas fa-check-circle"></i> Confirmar Pago
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MODAL DE CONFIRMACIÓN ========== -->
+    <div id="confirmationModal" class="modal">
+      <div class="modal-content confirmation-modal">
+        <div class="modal-body">
+          <div class="success-animation">
+            <div class="checkmark-circle">
+              <div class="checkmark"></div>
+            </div>
+          </div>
+          <h2>¡Pedido Confirmado!</h2>
+          <p class="order-number">Orden #<span id="orderNumber"></span></p>
+
+          <div class="prototype-badge">
+            <i class="fas fa-flask"></i>
+            <span>PROTOTIPO DE DEMOSTRACIÓN</span>
+          </div>
+
+          <div class="confirmation-details">
+            <div class="detail-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Tiempo estimado</strong>
+                <p>30-45 minutos</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Dirección de entrega</strong>
+                <p>Col. Kennedy, Calle Principal, Casa #123</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-money-bill-wave"></i>
+              <div>
+                <strong>Total pagado</strong>
+                <p id="finalTotal">0 lps</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="confirmation-message">
+            <p>Hemos enviado una confirmación a tu correo electrónico.</p>
+            <p>¡Gracias por tu pedido! 🍕</p>
+          </div>
+
+          <button class="btn btn-primary" id="closeConfirmation">Continuar Navegando</button>
+        </div>
+      </div>
+    </div>
+
     <!--  Jquery js file  -->
     <script src="assets/js/jquery-min.js"></script>
 
@@ -765,6 +1008,8 @@
     <script src="assets/js/owl.carousel.min.js"></script>
     <!--  custom js file  -->
     <script src="assets/js/main.js"></script>
+    <!--  cart system js  -->
+    <script src="assets/js/cart.js"></script>
 
     <!-- font awesonme -->
     <script
