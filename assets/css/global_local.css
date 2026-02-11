@@ -382,14 +382,14 @@ h6.sub-title {
 
 .banner h5 {
   background: var(--secondary);
-  color: var(--text-primary);
+  color: black;
   padding: 8px 20px;
   border-radius: 25px;
   display: inline-block;
   animation: pulse 2s infinite;
-  font-weight: 700;
-  box-shadow: 0 4px 15px rgba(255, 225, 25, 0.5);
+  font-weight: 800; 
   letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .banner h1 {
@@ -2028,6 +2028,150 @@ section:not(.banner)::before {
   #faq,
   #bebidas-acompanantes {
     padding: 3rem 0;
+  }
+
+  /* Ajustes específicos para Personaliza tu Pizza */
+  #personaliza-pizza {
+    padding: 3rem 1rem;
+  }
+
+  .personaliza-step {
+    padding: 2rem 1.5rem;
+  }
+
+  .personaliza-step h3 {
+    font-size: 1.1rem;
+  }
+
+  .size-options,
+  .masa-options {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .size-option,
+  .masa-option {
+    padding: 0.8rem;
+  }
+
+  .size-option i,
+  .masa-option i {
+    font-size: 1.2rem;
+  }
+
+  .size-option span,
+  .masa-option span {
+    font-size: 0.85rem;
+  }
+
+  .ingredientes-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .ingrediente-item {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .ingrediente-item i {
+    font-size: 1rem;
+  }
+
+  .step-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .step-icon i {
+    font-size: 1.5rem;
+  }
+
+  .step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .btn-personaliza {
+    padding: 12px 30px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .personaliza-cta {
+    padding: 0 1rem;
+  }
+}
+
+/* ========== RESPONSIVE MÓVILES PEQUEÑOS (480px o menos) ========== */
+@media (max-width: 480px) {
+  #personaliza-pizza .title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .subtitle-center {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+
+  .personaliza-step {
+    padding: 1.5rem 1rem;
+  }
+
+  .personaliza-step h3 {
+    font-size: 1rem;
+  }
+
+  .step-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .step-icon i {
+    font-size: 1.3rem;
+  }
+
+  .step-number {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+    left: 20px;
+  }
+
+  .size-option,
+  .masa-option {
+    padding: 0.7rem;
+  }
+
+  .ingrediente-item {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-personaliza {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ========== RESPONSIVE TABLETS (769px - 1024px) ========== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .personaliza-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .personaliza-step:last-child {
+    grid-column: 1 / -1;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .ingredientes-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
