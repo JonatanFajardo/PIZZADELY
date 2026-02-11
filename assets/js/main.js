@@ -14,3 +14,16 @@ $('.owl-carousel').owlCarousel({
         }
     }
 })
+
+// ========== FUNCIONALIDAD FAQ ACCORDION ==========
+$(document).ready(function() {
+    $('.faq-question').click(function() {
+        const faqItem = $(this).parent('.faq-item');
+
+        // Toggle active class
+        faqItem.toggleClass('active');
+
+        // Close other items (opcional - descomenta para accordion único)
+        // $('.faq-item').not(faqItem).removeClass('active');
+    });
+});
