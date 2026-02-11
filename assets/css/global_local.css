@@ -1,4 +1,5 @@
 /* @import url("https://drive.google.com/uc?id=1FFGct-H9pfYLbZMEEliYXfzgfiBOXalc"); */
+/* @import url(./framework/global.css); */
 @import url(./jonna-framework-0.7.css);
 /* @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@900&display=swap'); */
 :root {
@@ -59,4 +60,388 @@ h6.sub-title {
   font-weight: 600;
   letter-spacing: 1px;
 }
+
+/* ========== MEJORAS DINÁMICAS ========== */
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Aplicar animaciones a secciones */
+.banner {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.banner .col-6:first-child {
+  animation: slideInLeft 1s ease-out;
+}
+
+.banner .col-6:last-child {
+  animation: slideInRight 1s ease-out;
+}
+
+/* ========== CARDS DEL MENÚ - EFECTOS DINÁMICOS ========== */
+.cards-item {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(0);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cards-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+  z-index: 1;
+}
+
+.cards-item:hover::before {
+  left: 100%;
+}
+
+.cards-item:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(237, 59, 67, 0.3);
+  z-index: 10;
+}
+
+.cards-item .card-header {
+  overflow: hidden;
+  position: relative;
+}
+
+.cards-item .card-header img {
+  transition: transform 0.6s ease, filter 0.3s ease;
+  filter: brightness(0.95);
+}
+
+.cards-item:hover .card-header img {
+  transform: scale(1.15) rotate(2deg);
+  filter: brightness(1.1);
+}
+
+.cards-item .card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cards-item .card-title {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.cards-item:hover .card-title {
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+.cards-item .card-text {
+  transition: color 0.3s ease;
+}
+
+.cards-item:hover .card-text {
+  color: #555;
+}
+
+/* Efecto en el precio */
+.cards-price {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cards-price span {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--primary);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cards-item:hover .cards-price span {
+  transform: scale(1.15);
+  text-shadow: 0 2px 8px rgba(237, 59, 67, 0.3);
+}
+
+/* Botones mejorados */
+.cards-item .card-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border-radius: var(--border-r-buttom);
+}
+
+.cards-item .card-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.cards-item .card-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.cards-item .card-btn a {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.cards-item .card-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(237, 59, 67, 0.4);
+}
+
+/* ========== OWL CAROUSEL CARDS - EFECTOS DINÁMICOS ========== */
+.owl-cards-item {
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: visible;
+}
+
+.owl-cards-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(237, 59, 67, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: var(--border-radius);
+  pointer-events: none;
+}
+
+.owl-cards-item:hover::after {
+  opacity: 1;
+}
+
+.owl-cards-item:hover {
+  transform: scale(1.08) translateY(-10px);
+  box-shadow: 0 20px 40px rgba(237, 59, 67, 0.35);
+}
+
+.owl-cards-price {
+  font-size: 1.8em;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 15px 0;
+  transition: all 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.owl-cards-item:hover .owl-cards-price {
+  transform: scale(1.1);
+  color: var(--secondary);
+  text-shadow: 0 0 20px rgba(255, 225, 25, 0.6);
+}
+
+.owl-cards-title {
+  transition: transform 0.3s ease;
+}
+
+.owl-cards-item:hover .owl-cards-title {
+  transform: translateY(-3px);
+}
+
+.owl-cards-image {
+  transition: transform 0.4s ease;
+}
+
+.owl-cards-item:hover .owl-cards-image {
+  transform: scale(1.05);
+}
+
+/* ========== BANNER MEJORADO ========== */
+.banner h1 {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.banner h5 {
+  animation: pulse 2s infinite;
+  display: inline-block;
+}
+
+.btn-banner {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(255, 225, 25, 0.4);
+}
+
+.btn-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.btn-banner:hover::before {
+  left: 100%;
+}
+
+.btn-banner:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 225, 25, 0.6);
+}
+
+/* ========== TÍTULO DE SECCIÓN ========== */
+.title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+  animation: scaleIn 0.6s ease-out 0.3s both;
+}
+
+/* ========== SECCIÓN DE CONTACTO MEJORADA ========== */
+#contact {
+  position: relative;
+  overflow: hidden;
+}
+
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(45, 45, 67, 0.85);
+  z-index: 0;
+}
+
+#contact .container-full {
+  position: relative;
+  z-index: 1;
+}
+
+#contact h1,
+#contact h3,
+#contact h4 {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+#contact h4 {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#contact h4:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 20px rgba(255, 225, 25, 0.8);
+}
+
+/* ========== RESPONSIVE ANIMATIONS ========== */
+@media (max-width: 768px) {
+  .cards-item:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+
+  .owl-cards-item:hover {
+    transform: scale(1.05) translateY(-5px);
+  }
+}
+
+/* ========== SMOOTH SCROLL ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== LOADING ANIMATION ========== */
+.cards-item,
+.owl-cards-item {
+  animation: scaleIn 0.5s ease-out both;
+}
+
+.cards-item:nth-child(1) { animation-delay: 0.1s; }
+.cards-item:nth-child(2) { animation-delay: 0.2s; }
+.cards-item:nth-child(3) { animation-delay: 0.3s; }
+.cards-item:nth-child(4) { animation-delay: 0.4s; }
+.cards-item:nth-child(5) { animation-delay: 0.5s; }
+.cards-item:nth-child(6) { animation-delay: 0.6s; }
+.cards-item:nth-child(7) { animation-delay: 0.7s; }
+
 /*# sourceMappingURL=global_local.css.map */
