@@ -482,7 +482,7 @@ h6.sub-title {
 #menu {
   position: relative;
   padding: 5rem 0;
-  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+  background: linear-gradient(180deg, #FFF5EE 0%, #FFF8F2 50%, #FFF5EE 100%);
 }
 
 #menu::before {
@@ -733,7 +733,7 @@ section:not(.banner)::before {
 }
 
 /* ========== EFECTOS DE TEXTO MEJORADOS ========== */
-.card-title {
+.cards-item .card-title {
   background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -2249,17 +2249,17 @@ section:not(.banner)::before {
 .menu-card {
   position: relative;
   background: white;
-  border-radius: 24px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .menu-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  border-color: rgba(237, 59, 67, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 /* Menu Badges */
@@ -2277,14 +2277,13 @@ section:not(.banner)::before {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.4rem 0.8rem;
+  padding: 0.45rem 0.9rem;
   border-radius: 20px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(8px);
   animation: scaleIn 0.5s ease-out both;
 }
 
@@ -2293,17 +2292,17 @@ section:not(.banner)::before {
 }
 
 .badge-popular {
-  background: #FFB800;
+  background: #EF4444;
   color: white;
 }
 
 .badge-vegetarian {
-  background: #10B981;
+  background: #0D9488;
   color: white;
 }
 
 .badge-spicy {
-  background: #EF4444;
+  background: #1E3A5F;
   color: white;
 }
 
@@ -2374,27 +2373,30 @@ section:not(.banner)::before {
   font-weight: 700;
   margin-bottom: 0.6rem;
   color: #1F2937;
-  transition: all 0.3s ease;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  word-break: break-word;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+  transition: color 0.3s ease;
 }
 
 .menu-card:hover .card-title {
   color: var(--primary);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+  transform: none;
 }
 
 .menu-card .card-text {
   font-size: 0.85rem;
   color: #6B7280;
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 1.2rem;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -2413,57 +2415,63 @@ section:not(.banner)::before {
 /* Price Container */
 .price-container {
   display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
 .price-label {
-  font-size: 0.7rem;
-  color: #9CA3AF;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  font-weight: 600;
+  font-size: 0.8rem;
+  color: #6B7280;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0;
 }
 
 .menu-card .cards-price {
   font-size: 0.9rem;
   color: #374151;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .menu-card .cards-price span {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1F2937;
   transition: all 0.3s ease;
 }
 
 .menu-card:hover .cards-price span {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 /* Price Discount */
 .price-discount {
   display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
 .price-original {
   font-size: 0.8rem;
   color: #9CA3AF;
   text-decoration: line-through;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .price-sale {
   font-size: 0.9rem !important;
   color: #374151 !important;
+  font-weight: 400 !important;
 }
 
 .price-sale span {
-  font-size: 1.6rem !important;
-  color: var(--primary) !important;
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  color: #1F2937 !important;
 }
 
 /* Menu Card Button - Actualizado */
@@ -2473,24 +2481,26 @@ section:not(.banner)::before {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.2rem;
-  background: var(--primary);
+  padding: 0.75rem 1.4rem;
+  background: #EF4444;
   color: white;
   border: none;
-  border-radius: 50px;
+  border-radius: 12px;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   cursor: pointer;
   overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(237, 59, 67, 0.25);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .menu-card .card-btn::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: #c72c33;
+  background: #DC2626;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -2507,7 +2517,7 @@ section:not(.banner)::before {
 
 .menu-card .card-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(237, 59, 67, 0.4);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
 }
 
 .menu-card .card-btn a {
