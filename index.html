@@ -154,167 +154,236 @@
 
     <section id="menu">
       <div class="container">
-        <h2 class="title">Menu</h2>
+        <!-- Hero Section del Menú -->
+        <div class="menu-hero">
+          <div class="menu-badge">
+            <i class="fas fa-utensils"></i>
+            <span>Auténtica Cocina Italiana</span>
+          </div>
+          <h2 class="title">Nuestro Menú</h2>
+          <p class="menu-subtitle">Pizzas artesanales elaboradas con ingredientes frescos y masa fermentada naturalmente</p>
+        </div>
+
+        <!-- Menu Grid -->
         <div class="row">
-          <div class="cards">
-            <!-- cards-item -->
-            <div class="cards-item" data-product-id="1">
-              <div class="card-header">
-                <img
-                  src="assets/img/menu/menu_1.jpg"
-                  alt="No se encontro el archivo"
-                />
+          <div class="cards menu-grid">
+            <!-- cards-item 1 - Margarita -->
+            <div class=" menu-card" data-product-id="1">
+              <!-- Badges -->
+              <div class="menu-badges">
+                <span class="badge badge-popular">
+                  <i class="fas fa-star"></i> Popular
+                </span>
+                <span class="badge badge-vegetarian">
+                  <i class="fas fa-leaf"></i> Vegetariana
+                </span>
               </div>
-              <div class="card-content">
-                <div class="card-title">Margarita</div>
-                <div class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor.
+
+              <!-- Image Container -->
+              <div class="card-header menu-image-container">
+                <img src="assets/img/menu/menu_1.jpg" alt="Margarita" />
+                <div class="image-overlay"></div>
+
+                <!-- Rating -->
+                <div class="menu-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.8</span>
                 </div>
-                <div class="cards-price">Desde: <span>140lps </span></div>
-                <div class="card-btn btn btnOrdenar add-to-cart"
-                     data-name="Margarita"
-                     data-price="140"
-                     data-image="assets/img/menu/menu_1.jpg">
-                  <a href="#">Agregar al carrito</a>
+              </div>
+
+              <!-- Content -->
+              <div class="card-content">
+                <h3 class="card-title">Margarita</h3>
+                <p class="card-text">Tomate fresco, mozzarella di búfala, albahaca, aceite de oliva virgen extra</p>
+
+                <!-- Price and CTA -->
+                <div class="menu-footer">
+                  <div class="price-container">
+                    <span class="price-label">Desde</span>
+                    <span class="cards-price"><span>140</span>lps</span>
+                  </div>
+                  <button class="card-btn btn btnOrdenar add-to-cart"
+                       data-name="Margarita"
+                       data-price="140"
+                       data-image="assets/img/menu/menu_1.jpg">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Agregar</span>
+                  </button>
                 </div>
               </div>
             </div>
-            <!-- cards-item -->
-            <div class="cards-item" data-product-id="2">
-              <div class="card-header">
-                <img
-                  src="assets/img/menu/menu_2.jpg"
-                  alt="No se encontro el archivo"
-                />
+
+            <!-- cards-item 2 - Napolitana -->
+            <div class=" menu-card" data-product-id="2">
+              <div class="menu-badges">
+                <span class="badge badge-spicy">
+                  <i class="fas fa-fire"></i> Picante
+                </span>
               </div>
-              <div class="card-content">
-                <div class="card-title">Napolitana</div>
-                <div class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor.
+
+              <div class="card-header menu-image-container">
+                <img src="assets/img/menu/menu_2.jpg" alt="Napolitana" />
+                <div class="image-overlay"></div>
+                <div class="menu-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.6</span>
                 </div>
-                <div class="cards-price">Desde: <span>135lps </span></div>
-                <div class="card-btn btn btnOrdenar add-to-cart"
-                     data-name="Napolitana"
-                     data-price="135"
-                     data-image="assets/img/menu/menu_2.jpg">
-                  <a href="#">Agregar al carrito</a>
+              </div>
+
+              <div class="card-content">
+                <h3 class="card-title">Napolitana</h3>
+                <p class="card-text">Tomate, mozzarella, anchoas, alcaparras, orégano, ajo, aceite de oliva</p>
+
+                <div class="menu-footer">
+                  <div class="price-container">
+                    <span class="price-label">Desde</span>
+                    <span class="cards-price"><span>135</span>lps</span>
+                  </div>
+                  <button class="card-btn btn btnOrdenar add-to-cart"
+                       data-name="Napolitana"
+                       data-price="135"
+                       data-image="assets/img/menu/menu_2.jpg">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Agregar</span>
+                  </button>
                 </div>
               </div>
             </div>
-            <!-- cards-item -->
-            <div class="cards-item" data-product-id="3">
-              <div class="card-header">
-                <img
-                  src="assets/img/menu/menu_3.jpg"
-                  alt="No se encontro el archivo"
-                />
+
+            <!-- cards-item 3 - Cuatro Quesos -->
+            <div class=" menu-card" data-product-id="3">
+              <div class="menu-badges">
+                <span class="badge badge-vegetarian">
+                  <i class="fas fa-leaf"></i> Vegetariana
+                </span>
               </div>
-              <div class="card-content">
-                <div class="card-title">Cuatro Quesos</div>
-                <div class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor.
+
+              <div class="card-header menu-image-container">
+                <img src="assets/img/menu/menu_3.jpg" alt="Cuatro Quesos" />
+                <div class="image-overlay"></div>
+                <div class="menu-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.9</span>
                 </div>
-                <div class="cards-price">Desde: <span>136lps </span></div>
-                <div class="card-btn btn btnOrdenar add-to-cart"
-                     data-name="Cuatro Quesos"
-                     data-price="136"
-                     data-image="assets/img/menu/menu_3.jpg">
-                  <a href="#">Agregar al carrito</a>
+              </div>
+
+              <div class="card-content">
+                <h3 class="card-title">Cuatro Quesos</h3>
+                <p class="card-text">Mozzarella, gorgonzola, parmesano, queso de cabra, miel opcional</p>
+
+                <div class="menu-footer">
+                  <div class="price-container">
+                    <div class="price-discount">
+                      <span class="price-original">180lps</span>
+                      <span class="cards-price price-sale"><span>160</span>lps</span>
+                    </div>
+                  </div>
+                  <button class="card-btn btn btnOrdenar add-to-cart"
+                       data-name="Cuatro Quesos"
+                       data-price="160"
+                       data-image="assets/img/menu/menu_3.jpg">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Agregar</span>
+                  </button>
                 </div>
               </div>
             </div>
-            <!-- cards-item -->
-            <div class="cards-item" data-product-id="4">
-              <div class="card-header">
-                <img
-                  src="assets/img/menu/menu_4.jpg"
-                  alt="No se encontro el archivo"
-                />
+
+            <!-- cards-item 4 - Cuatro Estaciones -->
+            <div class=" menu-card" data-product-id="4">
+              <div class="menu-badges">
+                <span class="badge badge-popular">
+                  <i class="fas fa-star"></i> Popular
+                </span>
               </div>
-              <div class="card-content">
-                <div class="card-title">Cuatro Estaciones</div>
-                <div class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor.
+
+              <div class="card-header menu-image-container">
+                <img src="assets/img/menu/menu_4.jpg" alt="Cuatro Estaciones" />
+                <div class="image-overlay"></div>
+                <div class="menu-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.7</span>
                 </div>
-                <div class="cards-price">Desde: <span>210lps </span></div>
-                <div class="card-btn btn btnOrdenar add-to-cart"
-                     data-name="Cuatro Estaciones"
-                     data-price="210"
-                     data-image="assets/img/menu/menu_4.jpg">
-                  <a href="#">Agregar al carrito</a>
+              </div>
+
+              <div class="card-content">
+                <h3 class="card-title">Cuatro Estaciones</h3>
+                <p class="card-text">Tomate, mozzarella, jamón, champiñones, alcachofas, aceitunas negras</p>
+
+                <div class="menu-footer">
+                  <div class="price-container">
+                    <span class="price-label">Desde</span>
+                    <span class="cards-price"><span>210</span>lps</span>
+                  </div>
+                  <button class="card-btn btn btnOrdenar add-to-cart"
+                       data-name="Cuatro Estaciones"
+                       data-price="210"
+                       data-image="assets/img/menu/menu_4.jpg">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Agregar</span>
+                  </button>
                 </div>
               </div>
             </div>
-            <!-- cards-item -->
-            <div class="cards-item" data-product-id="5">
-              <div class="card-header">
-                <img
-                  src="assets/img/menu/menu_1.jpg"
-                  alt="No se encontro el archivo"
-                />
-              </div>
-              <div class="card-content">
-                <div class="card-title">Carbonara</div>
-                <div class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor.
+
+            <!-- cards-item 5 - Carbonara -->
+            <div class=" menu-card" data-product-id="5">
+              <div class="card-header menu-image-container">
+                <img src="assets/img/menu/menu_1.jpg" alt="Carbonara" />
+                <div class="image-overlay"></div>
+                <div class="menu-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.5</span>
                 </div>
-                <div class="cards-price">Desde: <span>250lps </span></div>
-                <div class="card-btn btn btnOrdenar add-to-cart"
-                     data-name="Carbonara"
-                     data-price="250"
-                     data-image="assets/img/menu/menu_1.jpg">
-                  <a href="#">Agregar al carrito</a>
+              </div>
+
+              <div class="card-content">
+                <h3 class="card-title">Carbonara</h3>
+                <p class="card-text">Crema, mozzarella, panceta ahumada, huevo, pimienta negra, parmesano</p>
+
+                <div class="menu-footer">
+                  <div class="price-container">
+                    <span class="price-label">Desde</span>
+                    <span class="cards-price"><span>250</span>lps</span>
+                  </div>
+                  <button class="card-btn btn btnOrdenar add-to-cart"
+                       data-name="Carbonara"
+                       data-price="250"
+                       data-image="assets/img/menu/menu_1.jpg">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Agregar</span>
+                  </button>
                 </div>
               </div>
             </div>
-            <!-- cards-item -->
-            <div class="cards-item" data-product-id="6">
-              <div class="card-header">
-                <img
-                  src="assets/img/menu/menu_2.jpg"
-                  alt="No se encontro el archivo"
-                />
+
+            <!-- cards-item 6 - Calzone -->
+            <div class=" menu-card" data-product-id="6">
+              <div class="card-header menu-image-container">
+                <img src="assets/img/menu/menu_2.jpg" alt="Calzone" />
+                <div class="image-overlay"></div>
+                <div class="menu-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.4</span>
+                </div>
               </div>
+
               <div class="card-content">
-                <div class="card-title">Calzone</div>
-                <div class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor.
-                </div>
-                <div class="cards-price">Desde: <span>200lps </span></div>
-                <div class="card-btn btn btnOrdenar add-to-cart"
-                     data-name="Calzone"
-                     data-price="200"
-                     data-image="assets/img/menu/menu_2.jpg">
-                  <a href="#">Agregar al carrito</a>
-                </div>
-              </div>
-            </div>
-            <!-- cards-item -->
-            <div class="cards-item" data-product-id="7">
-              <div class="card-header">
-                <img
-                  src="assets/img/menu/menu_3.jpg"
-                  alt="No se encontro el archivo"
-                />
-              </div>
-              <div class="card-content">
-                <div class="card-title">Diavola</div>
-                <div class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor.
-                </div>
-                <div class="cards-price">Desde: <span>143lps </span></div>
-                <div class="card-btn btn btnOrdenar add-to-cart"
-                     data-name="Diavola"
-                     data-price="143"
-                     data-image="assets/img/menu/menu_3.jpg">
-                  <a href="#">Agregar al carrito</a>
+                <h3 class="card-title">Calzone</h3>
+                <p class="card-text">Pizza cerrada rellena de mozzarella, jamón, champiñones, tomate</p>
+
+                <div class="menu-footer">
+                  <div class="price-container">
+                    <span class="price-label">Desde</span>
+                    <span class="cards-price"><span>200</span>lps</span>
+                  </div>
+                  <button class="card-btn btn btnOrdenar add-to-cart"
+                       data-name="Calzone"
+                       data-price="200"
+                       data-image="assets/img/menu/menu_2.jpg">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Agregar</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -551,10 +620,199 @@
           </div>
         </div>
         <div class="personaliza-cta">
-          <a href="#" class="btn btn-personaliza">Crear Mi Pizza</a>
+          <button class="btn btn-personaliza" id="openCustomPizza">Crear Mi Pizza</button>
         </div>
       </div>
     </section>
+
+    <!-- ========== MODAL PERSONALIZAR PIZZA ========== -->
+    <div id="customPizzaModal" class="modal">
+      <div class="modal-content custom-pizza-modal">
+        <div class="modal-header">
+          <h2><i class="fas fa-pizza-slice"></i> Personaliza tu Pizza</h2>
+          <span class="close-modal" data-modal="customPizzaModal">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="pizza-builder">
+            <!-- Paso 1: Tamaño -->
+            <div class="builder-section">
+              <div class="section-header">
+                <div class="step-badge">1</div>
+                <h3><i class="fas fa-ruler-combined"></i> Elige el Tamaño</h3>
+              </div>
+              <div class="size-selector">
+                <div class="size-card" data-size="personal" data-price="120">
+                  <div class="size-icon">
+                    <i class="fas fa-circle"></i>
+                  </div>
+                  <h4>Personal</h4>
+                  <p>20cm - 1-2 personas</p>
+                  <span class="size-price">+120 lps</span>
+                </div>
+                <div class="size-card" data-size="mediana" data-price="180">
+                  <div class="size-icon">
+                    <i class="fas fa-circle"></i>
+                  </div>
+                  <h4>Mediana</h4>
+                  <p>30cm - 2-3 personas</p>
+                  <span class="size-price">+180 lps</span>
+                </div>
+                <div class="size-card" data-size="grande" data-price="250">
+                  <div class="size-icon">
+                    <i class="fas fa-circle"></i>
+                  </div>
+                  <h4>Grande</h4>
+                  <p>40cm - 4-5 personas</p>
+                  <span class="size-price">+250 lps</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paso 2: Tipo de Masa -->
+            <div class="builder-section">
+              <div class="section-header">
+                <div class="step-badge">2</div>
+                <h3><i class="fas fa-bread-slice"></i> Tipo de Masa</h3>
+              </div>
+              <div class="dough-selector">
+                <div class="dough-card" data-dough="delgada" data-price="0">
+                  <i class="fas fa-check-circle"></i>
+                  <h4>Delgada</h4>
+                  <p>Crujiente y ligera</p>
+                  <span class="dough-price">Incluido</span>
+                </div>
+                <div class="dough-card" data-dough="gruesa" data-price="20">
+                  <i class="fas fa-check-circle"></i>
+                  <h4>Gruesa</h4>
+                  <p>Esponjosa y suave</p>
+                  <span class="dough-price">+20 lps</span>
+                </div>
+                <div class="dough-card" data-dough="stuffed" data-price="40">
+                  <i class="fas fa-check-circle"></i>
+                  <h4>Stuffed</h4>
+                  <p>Rellena de queso</p>
+                  <span class="dough-price">+40 lps</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paso 3: Ingredientes -->
+            <div class="builder-section">
+              <div class="section-header">
+                <div class="step-badge">3</div>
+                <h3><i class="fas fa-cheese"></i> Ingredientes</h3>
+                <p class="section-subtitle">Selecciona los ingredientes que desees (máximo 8)</p>
+              </div>
+              <div class="ingredients-selector">
+                <div class="ingredient-card" data-ingredient="pollo" data-price="25">
+                  <i class="fas fa-drumstick-bite"></i>
+                  <h4>Pollo</h4>
+                  <span class="ingredient-price">+25 lps</span>
+                </div>
+                <div class="ingredient-card" data-ingredient="tocino" data-price="30">
+                  <i class="fas fa-bacon"></i>
+                  <h4>Tocino</h4>
+                  <span class="ingredient-price">+30 lps</span>
+                </div>
+                <div class="ingredient-card" data-ingredient="pepperoni" data-price="30">
+                  <i class="fas fa-pepper-hot"></i>
+                  <h4>Pepperoni</h4>
+                  <span class="ingredient-price">+30 lps</span>
+                </div>
+                <div class="ingredient-card" data-ingredient="jalapeno" data-price="15">
+                  <i class="fas fa-pepper-hot"></i>
+                  <h4>Jalapeño</h4>
+                  <span class="ingredient-price">+15 lps</span>
+                </div>
+                <div class="ingredient-card" data-ingredient="queso-extra" data-price="25">
+                  <i class="fas fa-cheese"></i>
+                  <h4>Queso Extra</h4>
+                  <span class="ingredient-price">+25 lps</span>
+                </div>
+                <div class="ingredient-card" data-ingredient="champinones" data-price="20">
+                  <i class="fas fa-leaf"></i>
+                  <h4>Champiñones</h4>
+                  <span class="ingredient-price">+20 lps</span>
+                </div>
+                <div class="ingredient-card" data-ingredient="pimiento" data-price="15">
+                  <i class="fas fa-pepper-hot"></i>
+                  <h4>Pimiento</h4>
+                  <span class="ingredient-price">+15 lps</span>
+                </div>
+                <div class="ingredient-card" data-ingredient="cebolla" data-price="10">
+                  <i class="fas fa-leaf"></i>
+                  <h4>Cebolla</h4>
+                  <span class="ingredient-price">+10 lps</span>
+                </div>
+                <div class="ingredient-card" data-ingredient="tomate" data-price="10">
+                  <i class="fas fa-leaf"></i>
+                  <h4>Tomate</h4>
+                  <span class="ingredient-price">+10 lps</span>
+                </div>
+                <div class="ingredient-card" data-ingredient="aceitunas" data-price="15">
+                  <i class="fas fa-circle"></i>
+                  <h4>Aceitunas</h4>
+                  <span class="ingredient-price">+15 lps</span>
+                </div>
+                <div class="ingredient-card" data-ingredient="albahaca" data-price="10">
+                  <i class="fas fa-leaf"></i>
+                  <h4>Albahaca</h4>
+                  <span class="ingredient-price">+10 lps</span>
+                </div>
+                <div class="ingredient-card" data-ingredient="pina" data-price="20">
+                  <i class="fas fa-leaf"></i>
+                  <h4>Piña</h4>
+                  <span class="ingredient-price">+20 lps</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resumen de la Pizza -->
+            <div class="pizza-summary">
+              <h3>Tu Pizza Personalizada</h3>
+              <div class="summary-details">
+                <div class="summary-item">
+                  <i class="fas fa-ruler-combined"></i>
+                  <span id="selectedSize">Selecciona un tamaño</span>
+                </div>
+                <div class="summary-item">
+                  <i class="fas fa-bread-slice"></i>
+                  <span id="selectedDough">Selecciona tipo de masa</span>
+                </div>
+                <div class="summary-item">
+                  <i class="fas fa-list"></i>
+                  <span id="selectedIngredients">Sin ingredientes extras</span>
+                </div>
+              </div>
+              <div class="price-breakdown">
+                <div class="price-row">
+                  <span>Base:</span>
+                  <span id="basePrice">0 lps</span>
+                </div>
+                <div class="price-row">
+                  <span>Masa:</span>
+                  <span id="doughPrice">0 lps</span>
+                </div>
+                <div class="price-row">
+                  <span>Ingredientes:</span>
+                  <span id="ingredientsPrice">0 lps</span>
+                </div>
+                <div class="price-row total">
+                  <span>Total:</span>
+                  <span id="customPizzaTotal">0 lps</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary close-modal" data-modal="customPizzaModal">Cancelar</button>
+          <button class="btn btn-success" id="addCustomPizza" disabled>
+            <i class="fas fa-cart-plus"></i> Agregar al Carrito
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- ========== SECCIÓN: HORARIOS Y UBICACIÓN ========== -->
     <section id="horarios-ubicacion">
