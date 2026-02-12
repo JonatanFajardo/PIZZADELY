@@ -699,6 +699,385 @@
   margin: 0.5rem 0;
 }
 
+/* ========== MODAL PERSONALIZAR PIZZA ========== */
+.custom-pizza-modal {
+  max-width: 900px;
+}
+
+.pizza-builder {
+  padding: 1rem 0;
+}
+
+.builder-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.builder-section:last-of-type {
+  border-bottom: none;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.step-badge {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(237, 59, 67, 0.3);
+  flex-shrink: 0;
+}
+
+.section-header h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-subtitle {
+  margin-left: 50px;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Selector de Tamaño */
+.size-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.size-card {
+  background: white;
+  border: 3px solid #e0e0e0;
+  border-radius: 15px;
+  padding: 2rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.size-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(237, 59, 67, 0.2);
+}
+
+.size-card.selected {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(237, 59, 67, 0.1), rgba(255, 225, 25, 0.1));
+  box-shadow: 0 10px 30px rgba(237, 59, 67, 0.3);
+}
+
+.size-card.selected::before {
+  content: '\2713';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(237, 59, 67, 0.4);
+}
+
+.size-icon {
+  margin-bottom: 1rem;
+}
+
+.size-icon i {
+  font-size: 3rem;
+  color: var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.size-card:hover .size-icon i,
+.size-card.selected .size-icon i {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.size-card h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0.5rem 0;
+}
+
+.size-card p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.size-price {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Selector de Masa */
+.dough-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.dough-card {
+  background: white;
+  border: 3px solid #e0e0e0;
+  border-radius: 15px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dough-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(237, 59, 67, 0.2);
+}
+
+.dough-card.selected {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(237, 59, 67, 0.1), rgba(255, 225, 25, 0.1));
+}
+
+.dough-card.selected::before {
+  content: '\2713';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(237, 59, 67, 0.4);
+}
+
+.dough-card > i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.dough-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0.5rem 0;
+}
+
+.dough-card p {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+.dough-price {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Selector de Ingredientes */
+.ingredients-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.ingredient-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.2rem 0.8rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.ingredient-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(237, 59, 67, 0.15);
+}
+
+.ingredient-card.selected {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(237, 59, 67, 0.1), rgba(255, 225, 25, 0.1));
+}
+
+.ingredient-card.selected::before {
+  content: '\2713';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 25px;
+  height: 25px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  box-shadow: 0 3px 10px rgba(237, 59, 67, 0.4);
+}
+
+.ingredient-card > i {
+  font-size: 2rem;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.ingredient-card h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0.5rem 0;
+}
+
+.ingredient-price {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 0.5rem;
+}
+
+/* Resumen de la Pizza */
+.pizza-summary {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.pizza-summary h3 {
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pizza-summary h3::before {
+  content: '🍕';
+  font-size: 1.8rem;
+}
+
+.summary-details {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.summary-item:last-child {
+  margin-bottom: 0;
+}
+
+.summary-item i {
+  font-size: 1.2rem;
+  color: var(--primary);
+  width: 25px;
+  text-align: center;
+}
+
+.summary-item span {
+  flex: 1;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.price-breakdown {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.price-row.total {
+  border-top: 3px solid var(--primary);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.price-row.total span:last-child {
+  color: var(--primary);
+  text-shadow: 0 2px 10px rgba(237, 59, 67, 0.2);
+}
+
+#addCustomPizza:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#addCustomPizza:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .modal-content {
@@ -778,7 +1157,21 @@
   }
 
   .checkout-modal,
-  .confirmation-modal {
+  .confirmation-modal,
+  .custom-pizza-modal {
     max-width: 95%;
+  }
+
+  .size-selector,
+  .dough-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .ingredients-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pizza-summary {
+    padding: 1.5rem;
   }
 }
