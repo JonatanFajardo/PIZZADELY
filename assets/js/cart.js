@@ -99,6 +99,79 @@ function setupEventListeners() {
             $('#cardDetails').slideUp();
         }
     });
+
+    // ========== CUSTOM PIZZA BUILDER EVENT LISTENERS ==========
+    // Abrir modal de personalización
+    $('#openCustomPizza').on('click', function() {
+        resetCustomPizza();
+        openModal('customPizzaModal');
+    });
+
+    // Seleccionar tamaño
+    $(document).on('click', '.size-card', function() {
+        $('.size-card').removeClass('selected');
+        $(this).addClass('selected');
+        customPizza.size = $(this).data('size');
+        customPizza.sizePrice = parseFloat($(this).data('price'));
+        updateCustomPizzaSummary();
+    });
+
+    // Seleccionar masa
+    $(document).on('click', '.dough-card', function() {
+        $('.dough-card').removeClass('selected');
+        $(this).addClass('selected');
+        customPizza.dough = $(this).data('dough');
+        customPizza.doughPrice = parseFloat($(this).data('price'));
+        updateCustomPizzaSummary();
+    });
+
+    // Seleccionar ingredientes
+    $(document).on('click', '.ingredient-card', function() {
+        const ingredientName = $(this).data('ingredient');
+        const ingredientPrice = parseFloat($(this).data('price'));
+
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+            const index = customPizza.ingredients.findIndex(ing => ing.name === ingredientName);
+            if (index > -1) {
+                customPizza.ingredients.splice(index, 1);
+            }
+        } else {
+            if (customPizza.ingredients.length >= MAX_INGREDIENTS) {
+                alert(`Máximo ${MAX_INGREDIENTS} ingredientes permitidos`);
+                return;
+            }
+            $(this).addClass('selected');
+            customPizza.ingredients.push({
+                name: ingredientName,
+                price: ingredientPrice,
+                displayName: $(this).find('h4').text()
+            });
+        }
+
+        customPizza.ingredientsPrice = customPizza.ingredients.reduce((sum, ing) => sum + ing.price, 0);
+        updateCustomPizzaSummary();
+    });
+
+    // Agregar pizza personalizada al carrito
+    $('#addCustomPizza').on('click', function() {
+        if (!customPizza.size || !customPizza.dough) {
+            alert('Por favor selecciona el tamaño y tipo de masa');
+            return;
+        }
+
+        const sizeText = customPizza.size.charAt(0).toUpperCase() + customPizza.size.slice(1);
+        let pizzaName = `Pizza Personalizada ${sizeText}`;
+        if (customPizza.ingredients.length > 0) {
+            pizzaName += ` (${customPizza.ingredients.length} ingredientes)`;
+        }
+
+        const totalPrice = customPizza.sizePrice + customPizza.doughPrice + customPizza.ingredientsPrice;
+        addToCart(pizzaName, totalPrice, 'assets/img/p1.jpg');
+        closeModal('customPizzaModal');
+        showNotification('¡Pizza personalizada agregada al carrito!', 'success');
+        resetCustomPizza();
+    });
 }
 
 // ========== FUNCIONES DEL CARRITO ==========
@@ -413,12 +486,6 @@ let customPizza = {
 
 const MAX_INGREDIENTS = 8;
 
-// ========== ABRIR MODAL DE PERSONALIZACIÓN ==========
-$('#openCustomPizza').on('click', function() {
-    resetCustomPizza();
-    openModal('customPizzaModal');
-});
-
 // ========== RESETEAR CONSTRUCTOR ==========
 function resetCustomPizza() {
     customPizza = {
@@ -436,78 +503,6 @@ function resetCustomPizza() {
     // Actualizar UI
     updateCustomPizzaSummary();
 }
-
-// ========== SELECCIONAR TAMAÑO ==========
-$(document).on('click', '.size-card', function() {
-    // Remover selección anterior
-    $('.size-card').removeClass('selected');
-
-    // Agregar nueva selección
-    $(this).addClass('selected');
-
-    // Guardar datos
-    customPizza.size = $(this).data('size');
-    customPizza.sizePrice = parseFloat($(this).data('price'));
-
-    // Actualizar resumen
-    updateCustomPizzaSummary();
-});
-
-// ========== SELECCIONAR MASA ==========
-$(document).on('click', '.dough-card', function() {
-    // Remover selección anterior
-    $('.dough-card').removeClass('selected');
-
-    // Agregar nueva selección
-    $(this).addClass('selected');
-
-    // Guardar datos
-    customPizza.dough = $(this).data('dough');
-    customPizza.doughPrice = parseFloat($(this).data('price'));
-
-    // Actualizar resumen
-    updateCustomPizzaSummary();
-});
-
-// ========== SELECCIONAR INGREDIENTES ==========
-$(document).on('click', '.ingredient-card', function() {
-    const ingredientName = $(this).data('ingredient');
-    const ingredientPrice = parseFloat($(this).data('price'));
-
-    // Verificar si ya está seleccionado
-    if ($(this).hasClass('selected')) {
-        // Deseleccionar
-        $(this).removeClass('selected');
-
-        // Remover de array
-        const index = customPizza.ingredients.findIndex(ing => ing.name === ingredientName);
-        if (index > -1) {
-            customPizza.ingredients.splice(index, 1);
-        }
-    } else {
-        // Verificar límite de ingredientes
-        if (customPizza.ingredients.length >= MAX_INGREDIENTS) {
-            alert(`Máximo ${MAX_INGREDIENTS} ingredientes permitidos`);
-            return;
-        }
-
-        // Seleccionar
-        $(this).addClass('selected');
-
-        // Agregar a array
-        customPizza.ingredients.push({
-            name: ingredientName,
-            price: ingredientPrice,
-            displayName: $(this).find('h4').text()
-        });
-    }
-
-    // Recalcular precio de ingredientes
-    customPizza.ingredientsPrice = customPizza.ingredients.reduce((sum, ing) => sum + ing.price, 0);
-
-    // Actualizar resumen
-    updateCustomPizzaSummary();
-});
 
 // ========== ACTUALIZAR RESUMEN ==========
 function updateCustomPizzaSummary() {
@@ -552,39 +547,6 @@ function updateCustomPizzaSummary() {
         $('#addCustomPizza').prop('disabled', true);
     }
 }
-
-// ========== AGREGAR PIZZA PERSONALIZADA AL CARRITO ==========
-$('#addCustomPizza').on('click', function() {
-    // Validar que se haya seleccionado tamaño y masa
-    if (!customPizza.size || !customPizza.dough) {
-        alert('Por favor selecciona el tamaño y tipo de masa');
-        return;
-    }
-
-    // Crear nombre descriptivo
-    const sizeText = customPizza.size.charAt(0).toUpperCase() + customPizza.size.slice(1);
-    const doughText = customPizza.dough.charAt(0).toUpperCase() + customPizza.dough.slice(1);
-
-    let pizzaName = `Pizza Personalizada ${sizeText}`;
-    if (customPizza.ingredients.length > 0) {
-        pizzaName += ` (${customPizza.ingredients.length} ingredientes)`;
-    }
-
-    // Calcular precio total
-    const totalPrice = customPizza.sizePrice + customPizza.doughPrice + customPizza.ingredientsPrice;
-
-    // Agregar al carrito
-    addToCart(pizzaName, totalPrice, 'assets/img/p1.jpg');
-
-    // Cerrar modal
-    closeModal('customPizzaModal');
-
-    // Mostrar mensaje de éxito
-    showNotification('¡Pizza personalizada agregada al carrito!', 'success');
-
-    // Resetear constructor
-    resetCustomPizza();
-});
 
 // ========== LOG DE DEBUG ==========
 console.log('%c🍕 PizzaDely Cart System Loaded', 'color: #ed3b43; font-size: 16px; font-weight: bold;');

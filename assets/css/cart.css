@@ -347,19 +347,21 @@
   background: #6c757d;
   color: white;
   border: none;
-  padding: 12px 30px;
+  padding: 20px 80px;
   border-radius: var(--border-r-buttom);
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
 }
 
 .btn-secondary:hover {
   background: #5a6268;
   transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(108, 117, 125, 0.4);
 }
 
 .btn-success {
