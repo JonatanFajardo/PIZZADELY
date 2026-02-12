@@ -1064,19 +1064,154 @@
       </div>
     </section>
 
-    <div id="contact" class="">
-      <div class="container-full">
-        <div class="row f-mc">
-          <div class="col-6 md-f-right">
-            <h3 class="">CONTACTANOS</h3>
-            <h4>9553-4423</h4>
+    <!-- ========== SECCIÓN: CONTACTO MEJORADA ========== -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="title text-center">Contáctanos</h2>
+        <p class="contact-subtitle">¿Tienes alguna pregunta? ¡Nos encantaría saber de ti!</p>
+
+        <div class="contact-wrapper">
+          <!-- Información de Contacto -->
+          <div class="contact-info-section">
+            <div class="contact-info-header">
+              <i class="fas fa-pizza-slice"></i>
+              <h3>Información de Contacto</h3>
+            </div>
+
+            <div class="contact-info-items">
+              <div class="contact-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="info-content">
+                  <h4>Teléfono</h4>
+                  <a href="tel:95534423">9553-4423</a>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-content">
+                  <h4>Email</h4>
+                  <a href="mailto:info@pizzadely.com">info@pizzadely.com</a>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4>Dirección</h4>
+                  <p>Tegucigalpa, Honduras<br>Colonia Kennedy</p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-content">
+                  <h4>Horario de Atención</h4>
+                  <p>Lun - Jue: 11:00 AM - 10:00 PM<br>Vie - Sáb: 11:00 AM - 11:00 PM<br>Dom: 12:00 PM - 10:00 PM</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="social-media-section">
+              <h4>Síguenos en Redes Sociales</h4>
+              <div class="social-icons">
+                <a href="#" class="social-icon facebook" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon instagram" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon whatsapp" aria-label="WhatsApp">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="social-icon twitter" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="col-6 md-f-left">
-            <h1>Ordena tu pizza desde aqui</h1>
+
+          <!-- Formulario de Contacto -->
+          <div class="contact-form-section">
+            <div class="contact-form-header">
+              <i class="fas fa-paper-plane"></i>
+              <h3>Envíanos un Mensaje</h3>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+              <div class="form-row-contact">
+                <div class="form-group-contact">
+                  <label for="contactName">
+                    <i class="fas fa-user"></i>
+                    Nombre Completo
+                  </label>
+                  <input type="text" id="contactName" name="name" placeholder="Tu nombre" required>
+                </div>
+
+                <div class="form-group-contact">
+                  <label for="contactEmail">
+                    <i class="fas fa-envelope"></i>
+                    Correo Electrónico
+                  </label>
+                  <input type="email" id="contactEmail" name="email" placeholder="tu@email.com" required>
+                </div>
+              </div>
+
+              <div class="form-row-contact">
+                <div class="form-group-contact">
+                  <label for="contactPhone">
+                    <i class="fas fa-phone"></i>
+                    Teléfono
+                  </label>
+                  <input type="tel" id="contactPhone" name="phone" placeholder="9999-9999">
+                </div>
+
+                <div class="form-group-contact">
+                  <label for="contactSubject">
+                    <i class="fas fa-tag"></i>
+                    Asunto
+                  </label>
+                  <select id="contactSubject" name="subject" required>
+                    <option value="">Selecciona un asunto</option>
+                    <option value="pedido">Consulta sobre Pedidos</option>
+                    <option value="sugerencia">Sugerencia</option>
+                    <option value="queja">Queja o Reclamo</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group-contact full-width">
+                <label for="contactMessage">
+                  <i class="fas fa-comment"></i>
+                  Mensaje
+                </label>
+                <textarea id="contactMessage" name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-contact-submit">
+                <i class="fas fa-paper-plane"></i>
+                <span>Enviar Mensaje</span>
+              </button>
+            </form>
+
+            <div class="form-success-message" id="formSuccessMessage" style="display: none;">
+              <i class="fas fa-check-circle"></i>
+              <p>¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- ========== MODAL DEL CARRITO ========== -->
     <div id="cartModal" class="modal">
